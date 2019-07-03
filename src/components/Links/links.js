@@ -5,11 +5,23 @@ import {connect} from 'react-redux';
 import * as Actions from '../../store/actions/index'
 
 class Links extends Component{
+
+  state = {
+        currentPage: 1,
+        bookingsPerPage: 10,
+    }
   componentDidMount() {
     this.props.getProductsData();
   }
+
+  handleClick = (event) => {
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
+    }
+
   render() {
-    console.log(this.props.posts);
+     
     return (
      <div>
      <h4 style={{textAlign:'center'}} className="mb-2">Product Lists</h4>

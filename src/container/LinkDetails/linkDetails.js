@@ -10,14 +10,15 @@ class LinkDetails extends Component{
   }
   render() {
     console.log("hii",this.props.match.params.id);
-    const product = this.props.posts.products.filter((val) => {
+
+    const product =this.props.match.params.id ? this.props.posts.products.filter((val) => {
       if(val.id == this.props.match.params.id) {
         return true
       }
       else{
         return false
       }
-    })
+    }) : null
 
     return (
     <div>
@@ -27,13 +28,14 @@ class LinkDetails extends Component{
                 {
                   product.map( (val, i) => (<div key={i}>        
                       <div className="row">
-                      <div className="col-md-6 ml-2 mr-2">
+                      <div className="col-md-6">
+                      <h4 className="text-center">Product Details</h4>
                       <div className="card card-body">
                           <h1>{val.title} <span  style={{fontSize: '37%',fontWeight: '700'}} className="float-right badge badge-success" >{val.price}</span></h1>
                            <h4>{val.description}</h4>
                       </div>
                       </div>
-                       <div className="col-md-6">
+                       <div className="col-md-6 ">
                      <Adds />
                       </div>
                       </div>
@@ -43,6 +45,7 @@ class LinkDetails extends Component{
               </div>
             )
           }  
+          
     </div>
     )
   }
