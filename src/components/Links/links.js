@@ -20,18 +20,14 @@ class Links extends Component{
         });
     }
 
-  render() {
-     
-    return (
-     <div>
-     <h4 style={{textAlign:'center'}} className="mb-2">Product Lists</h4>
-      <div className="card card-body mb-3">
-    {
-     this.props.posts != null && (<div>
-     {
-      this.props.posts.products.map((val,i) => {
-      return(
-        <div className="card mt-2" key={i}>
+displayBookings = bookings => {
+        const { currentPage, bookingsPerPage } = this.state;
+        const indexOfLastBooking = currentPage * bookingsPerPage;
+        const indexOfFirstBooking = indexOfLastBooking - bookingsPerPage;
+        let searchedBookings = this.props.posts ? this.props.posts.products.slice(indexOfFirstBooking, indexOfLastBooking) : null;
+        return (
+            searchedBookings && (
+                searchedBookings.map((val, i) =>  <div className="card mt-2" key={i}>
                   <div className="card-body" style={{padding: '0.25rem'}}>
                    <div className="row">
                        <div className="col-md-8 mt-2 ml-1">
@@ -43,21 +39,54 @@ class Links extends Component{
                             </div>
                           </div>
                </div>
-               </div>
-  )
-})
-}
-</div>)
-}
+               </div>)
+            )
+        )
+    }
 
-</div>
-  <ul class="pagination float-right">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
+
+handleItemsChange = event => this.setState({ bookingsPerPage: event.target.value });
+
+  render() {
+     const {bookingsPerPage } = this.state;
+        const pageNumbers = [];
+        if(this.props.posts){
+     for (let i = 1; i <= Math.ceil(this.props.posts.products.length / bookingsPerPage); i++) {
+            pageNumbers.push(i);
+        }
+        }
+   
+        const renderPageNumbers = pageNumbers.map(number => {
+            return (
+                <li className="page-item"
+                    key={number}
+                >
+                    <span className="pagination-link-styles" id={number} onClick={this.handleClick}>{number}</span>
+                </li>
+            );
+        });
+    return (
+     <div>
+     <h4 style={{textAlign:'center'}} className="mb-2">Product Lists</h4>
+      <div className="card card-body mb-3">
+  {this.displayBookings()}
+      </div>
+  <div className="card card-body py-2">
+                        <div className="row">
+                            <div className="col-md-12 ">
+                                <ul className="pagination m-0 float-right">
+                                    <li className="page-item">
+                                        <i className="fa fa-angle-double-left pagination-link-styles" id={1} onClick={this.handleClick} aria-hidden="true"></i>
+                                    </li>
+                                    {renderPageNumbers}
+                                    <li className="page-item"
+                                    >
+                                        <i className="fa fa-angle-double-right pagination-link-styles" id={pageNumbers[pageNumbers.length - 1]} onClick={this.handleClick} aria-hidden="true"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
      </div>
     )
   }

@@ -6,6 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.js';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux';
