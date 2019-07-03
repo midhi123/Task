@@ -11,7 +11,7 @@ class LinkDetails extends Component{
   render() {
     console.log("hii",this.props.match.params.id);
 
-    const product =this.props.match.params.id ? this.props.posts.products.filter((val) => {
+    const product =this.props.posts ? this.props.posts.products.filter((val) => {
       if(val.id == this.props.match.params.id) {
         return true
       }
