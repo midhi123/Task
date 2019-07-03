@@ -1,0 +1,40 @@
+.frontPosition1 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition2 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition3 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition4 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition5 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition6 { display: inline-block; width: 300px; height: 250px; } 
+.frontPosition7 { display: inline-block; width: 300px; height: 250px; } 
+
+
+@media (min-width: 768px) and (max-width: 991px) { 
+ .frontPosition1 { width: 728px; height: 90px; } 
+ .frontPosition2 { display: none; } 
+ .frontPosition3 { width: 160px; height: 600px; } 
+ .frontPosition4 { display: none; } 
+ .frontPosition5 { display: none; } 
+ .frontPosition6 { width: 728px; height: 90px; } 
+ .frontPosition7 { display: none; } 
+
+   
+ .frontPosition1Decoration { 
+ margin-left: 10px; 
+ margin-bottom: 10px; 
+ } 
+ .frontPosition2Decoration
+ .frontPosition3Decoration { 
+ margin-top: 10px; 
+ margin-left: 10px; 
+ margin-bottom: 10px; 
+ float: right !important; 
+ } 
+ .frontPosition4Decoration 
+ .frontPosition5Decoration
+ .frontPosition6Decoration { 
+ margin-left: 10px; 
+ margin-bottom: 10px; 
+ padding-left: 15px; 
+ } 
+
+
+}
