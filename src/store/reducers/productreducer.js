@@ -1,7 +1,7 @@
 import * as ActionTypes from '../actions/action-types'
 
 const initialState = {
-    postItems: []
+    postItems: null
 }
 
  const PostReducer = (state = initialState, action) => {

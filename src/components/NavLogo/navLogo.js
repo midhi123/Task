@@ -2,8 +2,10 @@ import React from 'react';
 import './navLogo.css'
 
 const navLogo = (props) => (
-    <div className="Logo">
-    <img src={require('../../assests//images/logo.png')} alt="Alternative" />
-    </div>
+    <nav className="navbar navbar-expand-sm bg-dark navbar-dark mb-5">
+  <a className="navbar-brand" href="#">
+    <img src={require('../../assests/images/icon.jpeg')} alt="logo" style={{width:"40px"}} />
+  </a>
+</nav>
 );
 export default navLogo;

@@ -8,10 +8,8 @@ class Home extends Component{
   render() {
     return (
       <div>
-      {/*<NavLogo /> */}
+      <NavLogo />
       <div className="container">
-      <h1 style={{textAlign:'center'}} className="mb-4"><Link to="/link-details">MainPage</Link></h1>
-      
       <div className="row">
       <div className="col-md-8">
        <Links />

@@ -9,7 +9,9 @@ class App extends Component{
       <Router>
         <div>
           <Route exact path={"/"} component={Home} />
-          <Route path={"/link-details"} component={LinkDetails} />
+          <Route path="/link-details/:id" component={(props) => {
+            return <LinkDetails {...props} />
+          }} />
         </div>
       </Router>
     )
