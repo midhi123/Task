@@ -38,7 +38,7 @@ class LinkDetails extends Component {
        <NavLogo />
         {
           product != null && (<div className="container">
-
+          
             <h4>Product details</h4>
             {
               product.map((val, i) => (<div key={i}>
@@ -48,31 +48,31 @@ class LinkDetails extends Component {
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} />
+                    <img src = {require("../images/image1.jpeg")} className = "img" />
                     </div>
                   </div>
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} />
+                    <img src = {require("../images/pics1.jpeg")} className = "img" />
                     </div>
                   </div>
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} />
+                    <img src = {require("../images/img1.jpeg")} className = "img"/>
                     </div>
                   </div>
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} />
+                    <img src = {require("../images/pic2.jpeg")} className = "img"/>
                     </div>
                   </div>
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} />
+                    <img src = {require("../images/image1.jpeg")} className = "img"/>
                     </div>
                   </div>
                 </div>
@@ -84,24 +84,26 @@ class LinkDetails extends Component {
         }
         <div className="container">
           <div>
-            <h1>cafe details</h1>
+            <h1 className ="cafe">cafe details</h1>
             <p>items</p>
             <p>distance</p>
           </div>
           <hr />
           <div className="row">
             <div className="col-md-4">
-              <div className="info">
-                <h5>info</h5>
+              <div className="info1">
+                <h5 className ="info">info</h5>
                 <p>address</p>
                 <p>somewhere near to you</p>
               </div>
-              <div>
+              <div className = "time">
                 hours
-          <p>time</p>
-              </div>
+                    time  
+
+                    <p>22:30</p>           
+                     </div>
               <div>
-                <h5>Category</h5>
+                <h5 className = "category">Category</h5>
                 <p>items,places,types,etc</p>
               </div>
 
@@ -122,10 +124,10 @@ class LinkDetails extends Component {
             <div className="col-md-12 ">
             <div className = "row">
               <div className="col-md-1">
-                <img className = "img-co"/>
+                <img className = "img-co" src = {require("../images/women1.jpeg")}/>
                 </div>
               <div className="col-md-6">
-                <h4>Suneeth</h4>
+                <h4>julie</h4>
                 <p> food is very good</p>
               </div>
               </div>

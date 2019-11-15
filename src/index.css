@@ -95,4 +95,7 @@ body {
  
   
   }
-  
+  .card-img{
+    width: 180px;
+    height: 160px;
+  }
