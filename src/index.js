@@ -8,15 +8,8 @@ import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.js';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../src/store/reducers/index';
-const store = createStore(rootReducer,applyMiddleware(thunk))
 ReactDOM.render(
-    <Provider store={store}>
         <App />
-    </Provider>
     , document.getElementById('root'));
 
 serviceWorker.unregister();

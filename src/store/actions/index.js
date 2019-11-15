@@ -1,3 +1,0 @@
-export {
-    getProducts
-} from './products';

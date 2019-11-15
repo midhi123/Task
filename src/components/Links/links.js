@@ -1,103 +1,57 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
-import {connect} from 'react-redux';
-import * as Actions from '../../store/actions/index'
+class Links extends Component {
 
-class Links extends Component{
-
-  state = {
-        currentPage: 1,
-        bookingsPerPage: 10,
+    state = {
+        resData: []
     }
-  componentDidMount() {
-    this.props.getProductsData();
-  }
-
-  handleClick = (event) => {
-        this.setState({
-            currentPage: Number(event.target.id)
-        });
+    componentDidMount() {
+        this.getProductsData();
     }
 
-displayBookings = bookings => {
-        const { currentPage, bookingsPerPage } = this.state;
-        const indexOfLastBooking = currentPage * bookingsPerPage;
-        const indexOfFirstBooking = indexOfLastBooking - bookingsPerPage;
-        let searchedBookings = this.props.posts ? this.props.posts.products.slice(indexOfFirstBooking, indexOfLastBooking) : null;
+    getProductsData = () => {
+        axios.get('http://localhost:8001/api/products').then((res) => {
+            this.setState({ resData: res.data.products })
+        }).catch(error => {
+            console.log(error)
+        })
+    }
+
+    render() {
+        console.log(this.state.resData)
         return (
-            searchedBookings && (
-                searchedBookings.map((val, i) =>  <div className="card mt-2" key={i}>
-                  <div className="card-body" style={{padding: '0.25rem'}}>
-                   <div className="row">
-                       <div className="col-md-8 mt-2 ml-1">
-                          <h4>{val.title}</h4>
-                           </div>
-                         <div className="col-md-3 mt-2 ">
-                         <Link to={`/link-details/${val.id}`}> <button className="btn btn-sm btn-success float-right" style={{ width: "55px", height: "34px" }} >details</button></Link>
-                            
-                            </div>
-                          </div>
-               </div>
-               </div>)
-            )
-        )
-    }
+            <div>
+                {this.state.resData != null && this.state.resData.map((value, i) => {
+                    console.log(value)
+                    return (
+                        <div class="container-fluid">
+                            <div class="row">
 
+                                <div class="col-12 mt-3">
+                                    <Link to={`/link-details/${value.id}`}>
+                                        <div class="card-group vgr-cards">
+                                            <div class="card">
+                                                <div class="card-img-body">
+                                                    <img class="card-img" src= {require("../../container/images/image1.jpeg")} alt="Card image cap" />
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{value.title}</h4>
+                                                    <p class="card-text">{value.price}</p>
+                                                <a href="#" class="btn btn-outline-primary">{value.description}</a>
+                                                </div>
+                                            </div>
 
-handleItemsChange = event => this.setState({ bookingsPerPage: event.target.value });
-
-  render() {
-     const {bookingsPerPage } = this.state;
-        const pageNumbers = [];
-        if(this.props.posts){
-     for (let i = 1; i <= Math.ceil(this.props.posts.products.length / bookingsPerPage); i++) {
-            pageNumbers.push(i);
-        }
-        }
-   
-        const renderPageNumbers = pageNumbers.map(number => {
-            return (
-                <li className="page-item"
-                    key={number}
-                >
-                    <span className="pagination-link-styles" id={number} onClick={this.handleClick}>{number}</span>
-                </li>
-            );
-        });
-    return (
-     <div>
-     <h4 style={{textAlign:'center'}} className="mb-2">Product Lists</h4>
-      <div className="card card-body mb-3">
-  {this.displayBookings()}
-      </div>
-  <div className="card card-body py-2">
-                        <div className="row">
-                            <div className="col-md-12 ">
-                                <ul className="pagination m-0 float-right">
-                                    <li className="page-item">
-                                        <i className="fa fa-angle-double-left pagination-link-styles" id={1} onClick={this.handleClick} aria-hidden="true"></i>
-                                    </li>
-                                    {renderPageNumbers}
-                                    <li className="page-item"
-                                    >
-                                        <i className="fa fa-angle-double-right pagination-link-styles" id={pageNumbers[pageNumbers.length - 1]} onClick={this.handleClick} aria-hidden="true"></i>
-                                    </li>
-                                </ul>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-     </div>
-    )
-  }
+                    )
+                })}
+            </div>
+        )
+    }
 }
 
-const mapStateToProps = state => ({
-  posts: state.posts.postItems
-});
-
-const mapDispatchToProps = dispatch => ({
-  getProductsData: () => dispatch(Actions.getProducts())
-});
-
-export default connect(mapStateToProps,mapDispatchToProps)(React.memo(Links));
+export default Links;

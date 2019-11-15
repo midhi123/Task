@@ -1,0 +1,31 @@
+
+.detail{
+   margin-left: 70px;
+    width : 180px;
+   height: 200px;
+   
+}
+.info{
+    border-bottom: 1px solid rgb(177, 172, 172);
+    margin-right: 25px;
+    
+}
+.map-details{
+    border: 1px solid rgb(177, 172, 172);
+    width:400px;
+    height: 300px;
+}
+.comments{
+
+     width:98%;
+     height:100px;
+}
+.img-co{
+    width: 80px;
+    height : 80px;
+
+}
+.comm{
+    border-bottom:1px solid rgb(214, 210, 210);
+    padding-bottom: 10px;
+}

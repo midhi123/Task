@@ -8,3 +8,9 @@
 .Logo img{
     height: 100%
 }
+.search{
+   
+        height: 19px !important;
+        border-radius: 50px !important;
+    
+}

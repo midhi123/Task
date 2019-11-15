@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'
 import './adds.css'
 
-class Adds extends Component{
+class HomeMapSection extends Component{
   render() {
     return (
-     <div>
-     <h4 className="mb-2">Adds</h4>
-     <div className="card card-body" style={{width: '302px', padding: '0px'}}>
-           <img  className="img-responsive" src={require('../../assests/images/pepsi.webp')} alt="Alternative" width='300'/>
-       
-     </div>
-    <div className="card card-body mt-5" style={{width: '302px', padding: '0px'}}>
-           <img  className="img-responsive" src={require('../../assests/images/dettol.jpeg')} alt="Alternative" width='300'/>
-        </div> 
-      
-   <div className="card card-body mt-5" style={{width: '302px', padding: '0px'}}>
-           <img  className="img-responsive" src={require('../../assests/images/drading.jpeg')} alt="Alternative" width='300'/>
-        </div> 
+      <div>
+                        <Map google={this.props.google} zoom={14}
+                            initialCenter={{
+                                lat: 17.4399,
+                                lng: 78.4983
+                            }}>
 
-     </div>
-    )
-  }
+                            <Marker onClick={this.onMarkerClick}
+                                name={'Current location'} />
+                        </Map>
+            </div>
+        )
+    }
+};
 
-}
-
-export default Adds;
+export default GoogleApiWrapper({
+  apiKey: ("AIzaSyCgZ4MSAN1Qa88ma5OWu4urlk0x4N7k-wE")
+})(HomeMapSection)
+    
 
