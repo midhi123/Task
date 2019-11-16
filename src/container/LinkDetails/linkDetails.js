@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import NavLogo from "../../components/NavLogo/navLogo";
 import './details.css';
+import HomeMapSection from "../../components/Adds/adds"
 
 class LinkDetails extends Component {
 
@@ -48,7 +49,7 @@ class LinkDetails extends Component {
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} className = "img" />
+                    <img src = {require("../images/image2.jpeg")} className = "img" />
                     </div>
                   </div>
                   <div className="col-md-2">
@@ -72,7 +73,7 @@ class LinkDetails extends Component {
                   <div className="col-md-2">
 
                     <div className="card card-body detail">
-                    <img src = {require("../images/image1.jpeg")} className = "img"/>
+                    <img src = {require("../images/logo.png")} className = "img"/>
                     </div>
                   </div>
                 </div>
@@ -115,7 +116,7 @@ class LinkDetails extends Component {
             </div>
             <div className="col-md-5 ">
               <div className="map-details">
-                maps diagram
+              <HomeMapSection/>
           </div>
             </div>
           </div>

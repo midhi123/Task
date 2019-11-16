@@ -33,7 +33,7 @@ class Links extends Component {
                                         <div class="card-group vgr-cards">
                                             <div class="card">
                                                 <div class="card-img-body">
-                                                    <img class="card-img" src= {require("../../container/images/image1.jpeg")} alt="Card image cap" />
+                                                    <img class="card-img" src= {require(`../../container/images/${value.image}.jpeg`)} alt="Card image cap" />
                                                 </div>
                                                 <div class="card-body">
                                                     <h4 class="card-title">{value.title}</h4>
@@ -41,7 +41,6 @@ class Links extends Component {
                                                 <a href="#" class="btn btn-outline-primary">{value.description}</a>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </Link>
                                 </div>

@@ -5,7 +5,7 @@
       "title": "Product",
       "price": 1.9,
       "description": "It is Good",
-      "image":"../images/image1.jpeg"
+      "image":"pics1"
      
     },
     {
@@ -13,14 +13,14 @@
       "title": "Product1",
       "price": 6.9,
       "description": "It is Little Good",
-      "image":"../images/image2.jpeg"
+      "image":"image2"
     },
     {
       "id": 3,
       "title": "Product2",
       "price": 10.9,
       "description": "It is Good",
-      "image":"../images/img1.jpeg"
+      "image":"img1"
      
     },
     {
@@ -28,7 +28,7 @@
       "title": "Product3",
       "price": 10.9,
       "description": "It is Good", 
-      "image":"../images/pics1.jpeg"
+      "image":"image1"
      
     },
     {
@@ -36,7 +36,7 @@
       "title": "Product4",
       "price": 10.9,
       "description": "It is Good",
-      "image":"../images/img1.jpeg"
+      "image":"img1"
      
     },
     {
@@ -44,7 +44,7 @@
       "title": "Product5",
       "price": 10.9,
       "description": "It is Good",
-      "image":"../images/image1.jpeg"
+      "image":"image2"
      
     },
     {
@@ -52,7 +52,7 @@
       "title": "Product6",
       "price": 10.9,
       "description": "It is Good",
-      "image":"../images/image1.jpeg"
+      "image":"img1"
      
     },
     {
@@ -60,7 +60,7 @@
       "title": "Product7",
       "price": 10.9,
       "description": "It is Good",
-      "image":"../images/img3.jpeg"
+      "image":"img3"
      
     }
   ]
